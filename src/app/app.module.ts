@@ -13,6 +13,10 @@ import { ShoppingListDetailsComponent } from './shopping-list/shopping-list-deta
 import { DropdownToggleDirective } from './shared/dropdown-toggle.directive';
 import { RecipeService } from './services/recipe.service';
 import { ShoppingListService } from './services/shopping-list.service';
+import { RecipeDefaultComponent } from './recipes/recipe-details/recipe-default/recipe-default.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -24,11 +28,16 @@ import { ShoppingListService } from './services/shopping-list.service';
     ShoppingListComponent,
     ShoppingListDetailsComponent,
     RecipeListComponent,
-    DropdownToggleDirective
+    DropdownToggleDirective,
+    RecipeDefaultComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [RecipeService,ShoppingListService],
   bootstrap: [AppComponent]

@@ -6,9 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  routeSelector;
   title = 'udemyapp';
-  onEvent(data){
-   this.routeSelector=data;
-  }
 }

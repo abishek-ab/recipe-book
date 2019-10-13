@@ -19,4 +19,8 @@ ingredients:Ingredient[];
       }
     )
   }
+
+  onEdit(id:number){
+    this.shoppingService.shoppingEdit.next(id);
+  }
 }
