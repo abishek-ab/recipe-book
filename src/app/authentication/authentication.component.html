@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="alert alert-danger" *ngIf="error">
+            <p>{{error}}</p>
+        </div>
+        <form [formGroup]="authForm" (ngSubmit)="onSubmit()" *ngIf="!loading">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" class="form-control" formControlName="email">
+            <div style="color: red;" *ngIf="authForm.controls.email.touched && !authForm.controls.email.valid"
+            >Please enter a valid email !</div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" formControlName="password">
+            <div style="color: red;" *ngIf="authForm.controls.password.touched && !authForm.controls.password.valid"
+            >Please enter a password !</div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="sumbit" [disabled]="!authForm.valid">{{loginMode? 'Login':'Signup'}}</button> | 
+            <button class="btn btn-primary" type="button" (click)="switchMode()">Switch to {{loginMode? 'Signup':'Login'}}</button>
+        </div>
+    </form>
+    <div class="lds-roller" *ngIf="loading" style="text-align: center;"><div></div><div></div><div>
+    </div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+</div>
